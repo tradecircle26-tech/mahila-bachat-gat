@@ -1,4 +1,4 @@
-       <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,6 @@
     <title>Annapurna Mahila Bachat Gat | Shuddhata aur Vishwas</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
-    
     <style>
         :root {
             --primary-green: #2E7D32;
@@ -18,7 +17,6 @@
             --gray-text: #546E7A;
             --whatsapp-green: #25D366;
         }
-
         * {
             margin: 0;
             padding: 0;
@@ -26,16 +24,15 @@
             font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
             scroll-behavior: smooth;
         }
-
         body {
             background-color: var(--white);
             color: var(--dark-text);
             line-height: 1.6;
         }
-
         body.lang-en .hi { display: none; }
         body.lang-hi .en { display: none; }
 
+        /* Header & Navigation */
         header {
             background: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -43,7 +40,6 @@
             top: 0;
             z-index: 1000;
         }
-
         .navbar {
             max-width: 1200px;
             margin: auto;
@@ -53,35 +49,29 @@
             align-items: center;
             flex-wrap: wrap;
         }
-
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--primary-green);
             display: flex;
             align-items: center;
             gap: 8px;
         }
-
         .logo span { color: var(--saffron); }
-
         .nav-links {
             display: flex;
-            gap: 18px;
+            gap: 16px;
             list-style: none;
             align-items: center;
         }
-
         .nav-links a {
             text-decoration: none;
             color: var(--dark-text);
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+            font-size: 0.92rem;
+            transition: 0.3s;
         }
-
         .nav-links a:hover { color: var(--saffron); }
-
         .lang-btn {
             background: var(--saffron-light);
             color: var(--saffron);
@@ -92,137 +82,71 @@
             cursor: pointer;
             transition: 0.3s;
         }
+        .lang-btn:hover { background: var(--saffron); color: var(--white); }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-green); }
 
-        .lang-btn:hover {
-            background: var(--saffron);
-            color: var(--white);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--primary-green);
-        }
-
+        /* Hero Banner */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                         url('https://unsplash.com') center/cover no-repeat;
             color: var(--white);
             text-align: center;
             padding: 110px 20px;
         }
-
-        .hero h1 {
-            font-size: 2.6rem;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: #f1f8e9;
-        }
-
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.15rem; max-width: 720px; margin: 0 auto 30px; color: #f1f8e9; }
         .btn-primary {
             background: var(--saffron);
             color: var(--white);
-            padding: 14px 30px;
+            padding: 13px 28px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.05rem;
             display: inline-block;
-            transition: transform 0.3s, background 0.3s;
             border: none;
             cursor: pointer;
+            transition: 0.3s;
         }
+        .btn-primary:hover { background: #E65100; transform: translateY(-2px); }
 
-        .btn-primary:hover {
-            background: #E65100;
-            transform: translateY(-2px);
-        }
-
-        section {
-            padding: 70px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--primary-green);
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: var(--gray-text);
-            max-width: 650px;
-            margin: auto;
-        }
-
+        /* Common Section Styles */
+        section { padding: 65px 20px; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 2rem; color: var(--primary-green); margin-bottom: 10px; }
+        .section-title p { color: var(--gray-text); max-width: 680px; margin: auto; }
         .bg-light-green { background-color: var(--light-green); max-width: 100%; }
         .bg-saffron-light { background-color: var(--saffron-light); max-width: 100%; }
         .inner-container { max-width: 1200px; margin: auto; }
 
-        .stats-grid {
+        /* Grids */
+        .stats-grid, .team-grid, .steps-grid, .product-grid, .hamper-grid, .reels-grid, .reviews-grid, .event-list, .join-grid, .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            text-align: center;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
         }
 
+        /* Cards */
         .stat-card {
             background: var(--white);
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             border-bottom: 4px solid var(--saffron);
         }
-
-        .stat-card h3 {
-            font-size: 2.2rem;
-            color: var(--primary-green);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
+        .stat-card h3 { font-size: 2.2rem; color: var(--primary-green); }
 
         .team-card {
             background: var(--white);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             text-align: center;
-            padding-bottom: 20px;
+            padding-bottom: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-
-        .team-card img {
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-        }
-
-        .team-card h4 { margin-top: 15px; color: var(--dark-text); font-size: 1.15rem; }
+        .team-card img { width: 100%; height: 220px; object-fit: cover; }
+        .team-card h4 { margin-top: 14px; font-size: 1.1rem; }
         .team-card span { color: var(--saffron); font-weight: 600; font-size: 0.9rem; }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
 
         .step-card {
             background: var(--white);
@@ -231,551 +155,79 @@
             text-align: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
-
         .step-icon {
-            width: 60px;
-            height: 60px;
+            width: 60px; height: 60px;
             background: var(--light-green);
             color: var(--primary-green);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin: 0 auto 15px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin: 0 auto 15px;
         }
+        .badges { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+        .badge { background: var(--primary-green); color: var(--white); padding: 8px 18px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
 
-        .badges {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 35px;
-        }
-
-        .badge {
-            background: var(--primary-green);
-            color: var(--white);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 25px;
-        }
-
+        /* Product Cards */
         .product-card {
             background: var(--white);
             border: 1px solid #e0e0e0;
             border-radius: 12px;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex; flex-direction: column; justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-
-        }
-
-        .product-info { padding: 20px; }
-        .product-info h3 { font-size: 1.2rem; margin-bottom: 5px; }
-        .price-weight {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 700;
-            color: var(--primary-green);
-            margin-bottom: 10px;
-        }
-
-        .ingredients {
-            font-size: 0.85rem;
-            color: var(--gray-text);
-            margin-bottom: 15px;
-        }
-
+        .product-card img { width: 100%; height: 200px; object-fit: cover; }
+        .product-info { padding: 18px; }
+        .price-weight { display: flex; justify-content: space-between; font-weight: 700; color: var(--primary-green); margin: 8px 0; }
+        .ingredients { font-size: 0.85rem; color: var(--gray-text); margin-bottom: 14px; }
         .btn-whatsapp {
             background: var(--whatsapp-green);
             color: var(--white);
             text-decoration: none;
             padding: 10px 15px;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
             font-weight: 600;
-            transition: 0.3s;
         }
-
         .btn-whatsapp:hover { background: #1ebe57; }
-
         .bulk-note {
-            text-align: center;
-            margin-top: 35px;
-            background: var(--saffron-light);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px dashed var(--saffron);
+            text-align: center; margin-top: 35px; background: var(--saffron-light);
+            padding: 22px; border-radius: 12px; border: 1px dashed var(--saffron);
         }
 
-        /* Gift Hampers */
-        .hamper-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        /* Hampers, Reels, Trust, Events, Forms, Blog */
+        .hamper-card, .review-card, .form-box, .blog-card {
+            background: var(--white); padding: 24px; border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
-
-        .hamper-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            border-top: 5px solid var(--saffron);
-        }
-
-        /* Video Reels Gallery */
-        .reels-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
+        .hamper-card { border-top: 5px solid var(--saffron); }
         .reel-card {
-            position: relative;
-            border-radius: 14px;
-            overflow: hidden;
-            height: 360px;
-            background: #000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: relative; border-radius: 14px; overflow: hidden; height: 340px; background: #000;
         }
-
-        .reel-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.8;
-        }
-
+        .reel-card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
         .reel-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            position: absolute; bottom: 0; left: 0; right: 0;
             background: linear-gradient(transparent, rgba(0,0,0,0.85));
-            color: var(--white);
-            padding: 20px 15px;
+            color: var(--white); padding: 18px;
         }
-
-        .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
-            color: var(--white);
-            opacity: 0.9;
-        }
-
-        /* Trust & Certificates */
+        .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2.8rem; color: var(--white); }
         .cert-bar {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-            background: var(--white);
-            padding: 25px;
-            border-radius: 12px;
+            display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;
+            background: var(--white); padding: 24px; border-radius: 12px; margin-bottom: 35px; text-align: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-            text-align: center;
         }
-
-        .cert-item i { font-size: 2rem; color: var(--primary-green); margin-bottom: 8px; }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .review-card {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        }
-
-        /* Events Board */
-        .event-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .event-card {
-            background: var(--white);
-            border-left: 5px solid var(--primary-green);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-        }
-
-        .event-date {
-            color: var(--saffron);
-            font-weight: 700;
-            font-size: 0.95rem;
-        }
-
-        /* Join Us Forms */
-        .join-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .form-box {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-        }
-
-        .form-box h3 { color: var(--primary-green); margin-bottom: 15px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 0.95rem;
-        }
-
-        /* Blog & Tips */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .blog-card {
-            background: var(--white);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        }
+        .cert-item i { font-size: 2rem; color: var(--primary-green); margin-bottom: 6px; }
+        .event-card { background: var(--white); border-left: 5px solid var(--primary-green); padding: 20px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); }
+        .event-date { color: var(--saffron); font-weight: 700; margin-bottom: 5px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group input { width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95rem; }
 
         /* FAQ Accordion */
-        .faq-item {
-            background: var(--white);
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
+        .faq-item { background: var(--white); border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+        .faq-question { padding: 15px 20px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #fafafa; }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s ease; color: var(--gray-text); }
+        .faq-item.active .faq-answer { padding: 14px 20px; max-height: 180px; }
 
-        .faq-question {
-            padding: 16px 20px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #fafafa;
-        }
-
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            color: var(--gray-text);
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 15px 20px;
-            max-height: 200px;
-        }
-
-        /* Contact & Footer */
-        footer {
-            background: #1B5E20;
-            color: var(--white);
-            padding: 60px 20px 20px;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-grid h3 { color: #FFCC80; margin-bottom: 15px; }
-        .footer-grid p, .footer-grid a { color: #E8F5E9; text-decoration: none; font-size: 0.95rem; }
-        .social-icons { display: flex; gap: 15px; margin-top: 15px; font-size: 1.4rem; }
-
-        .copyright {
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            padding-top: 20px;
-            font-size: 0.85rem;
-        }
-
-        /* Sticky Floating WhatsApp Button */
-        .sticky-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--whatsapp-green);
-            color: var(--white);
-            padding: 14px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            z-index: 9999;
-            transition: transform 0.3s;
-        }
-
-        .sticky-whatsapp:hover { transform: scale(1.05); }
-
-        /* Mobile Responsive */
-        @media (max-width: 850px) {
-            .menu-toggle { display: block; }
-            .nav-links {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                padding-top: 15px;
-            }
-            .nav-links.active { display: flex; }
-            .hero h1 { font-size: 1.9rem; }
-        }
-    </style>
-</head>
-<body class="lang-hi">
-
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <div>
-                    <span class="hi">अन्नपूर्णा <span>महिला बचत गट</span></span>
-                    <span class="en">Annapurna <span>Mahila Bachat Gat</span></span>
-                </div>
-            </div>
-            <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home"><span class="hi">होम</span><span class="en">Home</span></a></li>
-                <li><a href="#story"><span class="hi">हमारी कहानी</span><span class="en">Our Story</span></a></li>
-                <li><a href="#products"><span class="hi">प्रोडक्ट्स</span><span class="en">Products</span></a></li>
-                <li><a href="#hampers"><span class="hi">गिफ्ट हैंपर्स</span><span class="en">Gift Hampers</span></a></li>
-                <li><a href="#events"><span class="hi">मेला अपडेट्स</span><span class="en">Events</span></a></li>
-                <li><a href="#join"><span class="hi">जुड़ें</span><span class="en">Join Us</span></a></li>
-                <li><a href="#contact"><span class="hi">संपर्क</span><span class="en">Contact</span></a></li>
-                <li>
-                    <button class="lang-btn" onclick="toggleLanguage()">
-                        <span class="hi">English</span>
-                        <span class="en">हिंदी / मराठी</span>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="hero" id="home">
-        <h1>
-            <span class="hi">शुद्धता और विश्वास, महिलाओं के हाथों का स्वाद</span>
-            <span class="en">Purity and Trust, Handmade by Women</span>
-        </h1>
-        <p>
-            <span class="hi">हर खरीदारी से एक परिवार को सशक्त बनाएं। गाँव की महिलाओं द्वारा पारंपरिक और स्वच्छ तरीके से तैयार शुद्ध घरेलू उत्पाद।</span>
-    <!-- 3. Quick Intro & Impact Stats -->
-    <section>
-        <div class="section-title">
-            <h2>
-                <span class="hi">हमारा परिचय और प्रभाव</span>
-                <span class="en">Who We Are & Our Impact</span>
-            </h2>
-            <p>
-                <span class="hi">साल 2019 में 10 महिलाओं के छोटे से समूह से शुरू हुआ यह सफर आज 65+ परिवारों की आत्मनिर्भरता की कहानी बन चुका है। हम बिना किसी केमिकल या प्रिजर्वेटिव के शुद्ध खाद्य और हस्तशिल्प उत्पाद बनाते हैं।</span>
-                <span class="en">Started in 2019 by 10 local women, our Bachat Gat now empowers over 65 families. We craft 100% pure, preservative-free food items and handmade goods using traditional recipes.</span>
-            </p>
-        </div>
-
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>65+</h3>
-                <p><span class="hi">सशक्त महिलाएं</span><span class="en">Women Empowered</span></p>
-            </div>
-            <div class="stat-card">
-                <h3>100%</h3>
-                <p><span class="hi">हाथों से निर्मित (Handmade)</span><span class="en">100% Handmade</span></p>
-            </div>
-            <div class="stat-card">
-                <h3>0%</h3>
-                <p><span class="hi">केमिकल और प्रिजर्वेटिव मुक्त</span><span class="en">Chemical-Free</span></p>
-            </div>
-            <div class="stat-card">
-                <h3>5000+</h3>
-                <p><span class="hi">संतुष्ट ग्राहक</span><span class="en">Happy Customers</span></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Hamari Kahani (About Us & Team) -->
-    <div class="bg-light-green" id="story">
-        <section class="inner-container">
-            <div class="section-title">
-                <h2>
-                    <span class="hi">हमारी कहानी और नेतृत्व</span>
-                    <span class="en">Our Story & Meet Our Members</span>
-                </h2>
-                <p>
-                    <span class="hi">घर की चारदीवारी से निकलकर आर्थिक रूप से आत्मनिर्भर बनने वाली हमारी मेहनती बहनों से मिलें।</span>
-                    <span class="en">Meet the inspiring women leaders who turned traditional household skills into a thriving community enterprise.</span>
-                </p>
-            </div>
-
-            <div class="team-grid">
-                <div class="team-card">
-                    <img src="https://unsplash.com" alt="Sunita Patil">
-                    <h4>सुनीता ताई पाटिल (Sunita Patil)</h4>
-                    <span><span class="hi">अध्यक्ष (President)</span><span class="en">Group President</span></span>
-                </div>
-                <div class="team-card">
-                    <img src="https://unsplash.com" alt="Meena Deshmukh">
-                    <h4>मीना देशमुख (Meena Deshmukh)</h4>
-                    <span><span class="hi">सचिव एवं क्वालिटी प्रमुख</span><span class="en">Secretary & Quality Head</span></span>
-                </div>
-                <div class="team-card">
-                    <img src="https://unsplash.com" alt="Kavita Jadhav">
-                    <h4>कविता जाधव (Kavita Jadhav)</h4>
-                    <span><span class="hi">कोषाध्यक्ष एवं पैकेजिंग</span><span class="en">Treasurer & Packaging</span></span>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- 5. Hygiene & Quality Promise -->
-    <section>
-        <div class="section-title">
-            <h2>
-                <span class="hi">साफ-सफाई और शुद्धता की गारंटी</span>
-                <span class="en">Hygiene & Quality Promise</span>
-            </h2>
-        </div>
-
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-icon"><i class="fas fa-tractor"></i></div>
-                <h4><span class="hi">1. सीधे किसानों से कच्चा माल</span><span class="en">1. Farm-Fresh Sourcing</span></h4>
-                <p><span class="hi">हम सीधे स्थानीय किसानों से बिना पॉलिश किए हुए शुद्ध अनाज और मसाले खरीदते हैं।</span><span class="en">We source unpolished grains and raw spices directly from trusted local farmers.</span></p>
-            </div>
-            <div class="step-card">
-                <div class="step-icon"><i class="fas fa-hands-wash"></i></div>
-                <h4><span class="hi">2. स्वच्छ और पारंपरिक निर्माण</span><span class="en">2. Hygienic Preparation</span></h4>
-                <p><span class="hi">सफाई, धूप में सुखाने और पीसने का हर काम पूरी स्वच्छता और ग्लव्स/हेड-कवर के साथ होता है।</span><span class="en">Every batch is cleaned, sun-dried, and ground under strict hygiene standards.</span></p>
-            </div>
-            <div class="step-card">
-                <div class="step-icon"><i class="fas fa-box-open"></i></div>
-                <h4><span class="hi">3. इको-फ्रेंडली पैकेजिंग</span><span class="en">3. Eco-Friendly Packaging</span></h4>
-                <p><span class="hi">ताजगी बनाए रखने के लिए फूड-ग्रेड और पर्यावरण अनुकूल पैकिंग का उपयोग किया जाता है।</span><span class="en">Packed in food-grade, moisture-proof, and eco-friendly pouches to lock in aroma.</span></p>
-            </div>
-        </div>
-
-        <div class="badges">
-            <span class="badge"><i class="fas fa-check-circle"></i> 100% Chemical-Free</span>
-            <span class="badge"><i class="fas fa-check-circle"></i> No Artificial Colors</span>
-            <span class="badge"><i class="fas fa-check-circle"></i> Homemade Quality</span>
-            <span class="badge"><i class="fas fa-check-circle"></i> FSSAI Certified</span>
-        </div>
-    </section>
-
-    <!-- 6. Hamare Products (Product Catalog) -->
-    <div class="bg-light-green" id="products">
-        <section class="inner-container">
-            <div class="section-title">
-                <h2>
-                    <span class="hi">हमारे शुद्ध उत्पाद</span>
-                    <span class="en">Our Handmade Products</span>
-                </h2>
-                <p>
-                    <span class="hi">बिना किसी लंबे फॉर्म के सीधे WhatsApp पर अपना ऑर्डर बुक करें।</span>
-                    <span class="en">Order directly on WhatsApp in one click—no lengthy sign-up forms required.</span>
-                </p>
-            </div>
-
-            <div class="product-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <img src="https://unsplash.com" alt="Kala Masala">
-                    <div class="product-info">
-                        <h3><span class="hi">पारंपरिक कांदा लहसुन मसाला</span><span class="en">Traditional Kanda Lasun Masala</span></h3>
-                        <div class="price-weight">
-                            <span>₹180</span>
-                            <span>250g</span>
-                        </div>
-                        <p class="ingredients"><strong>Ingredients:</strong> Byadagi Chilli, Onion, Garlic, Dry Coconut, 18 Whole Spices.</p>
-                        <a href="https://wa.me." target="_blank" class="btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> <span class="hi">WhatsApp पर ऑर्डर करें</span><span class="en">Order on WhatsApp</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <img src="https://unsplash.com" alt="Urad Papad">
-                    <div class="product-info">
-                        <h3><span class="hi">हाथ से बने उड़द पापड़</span><span class="en">Hand-Rolled Urad Dal Papad</span></h3>
-                        <div class="price-weight">
-                            <span>₹150</span>
-                            <span>500g</span>
-                        </div>
-                        <p class="ingredients"><strong>Ingredients:</strong> Pure Urad Dal Flour, Black Pepper, Asafoetida (Hing), Rock Salt.</p>
-                        <a href="https://wa.me." target="_blank" class="btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> <span class="hi">WhatsApp पर ऑर्डर करें</span><span class="en">Order on WhatsApp</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <img src="https://unsplash.com" alt="Mango Pickle">
-                    <div class="product-info">
-                        <h3><span class="hi">घर का बना आम का अचार</span><span class="en">Homemade Mango Pickle</span></h3>
-                        <div class="price-weight">
-                            <span>₹220</span>
-                            <span>500g</span>
-                        </div>
-                        <p class="ingredients"><strong>Ingredients:</strong> Raw Rajapuri Mango, Cold-Pressed Mustard Oil, Fenugreek, Turmeric.</p>
-                        <a href="https://wa.me." target="_blank" class="btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> <span class="hi">WhatsApp पर ऑर्डर करें</span><span class="en">Order on WhatsApp</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-card">
+        /* Footer & Sticky Button */
     <!-- 3. Quick Intro & Impact Stats -->
     <section>
         <div class="section-title">
@@ -1064,7 +516,6 @@
         </div>
 
         <div class="join-grid">
-            <!-- Pathway 1: For Local Women -->
             <div class="form-box">
                 <h3><i class="fas fa-female"></i> <span class="hi">बचत गट की सदस्य बनें</span><span class="en">Join Our Bachat Gat (For Women)</span></h3>
                 <p style="font-size:0.9rem; margin-bottom:15px;"><span class="hi">यदि आप अपने घर से काम करके आत्मनिर्भर बनना चाहती हैं, तो नीचे जानकारी भरें।</span><span class="en">Local women interested in training and earning with our group can apply below.</span></p>
@@ -1076,7 +527,6 @@
                 </form>
             </div>
 
-            <!-- Pathway 2: For Retailers -->
             <div class="form-box">
                 <h3><i class="fas fa-store"></i> <span class="hi">रिटेलर / डिस्ट्रीब्यूटर बनें</span><span class="en">Become a Retailer / Distributor</span></h3>
                 <p style="font-size:0.9rem; margin-bottom:15px;"><span class="hi">अपनी दुकान या सुपरमार्केट में हमारे शुद्ध उत्पाद रखने के लिए संपर्क करें।</span><span class="en">Stock our fast-moving handmade products in your store or supermarket.</span></p>
@@ -1123,6 +573,7 @@
         </div>
 
         <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
     <!-- 13. FAQ & Order Tracking -->
     <section>
         <div class="section-title">
@@ -1200,7 +651,7 @@
         <span><span class="hi">WhatsApp ऑर्डर</span><span class="en">WhatsApp Order</span></span>
     </a>
 
-    <!-- JavaScript for Language Switcher, Menu, FAQ & WhatsApp Form -->
+    <!-- JavaScript -->
     <script>
         function toggleLanguage() {
             const body = document.body;
