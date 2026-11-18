@@ -8,91 +8,98 @@
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         :root {
-            --green: #2E7D32;
-            --lgreen: #E8F5E9;
-            --saffron: #F57C00;
-            --lsaffron: #FFF3E0;
+            --emerald: #1B4332;
+            --green: #2D6A4F;
+            --sage: #E9F3EC;
+            --cream: #FAF8F2;
+            --gold: #D97706;
+            --amber-bg: #FEF3C7;
             --white: #FFFFFF;
-            --dark: #263238;
-            --gray: #546E7A;
+            --dark: #1F2937;
+            --gray: #4B5563;
             --wa: #25D366;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif; scroll-behavior: smooth; }
-        body { background: var(--white); color: var(--dark); line-height: 1.6; }
+        body { background-color: var(--cream); color: var(--dark); line-height: 1.65; }
         body.lang-en .hi { display: none; }
         body.lang-hi .en { display: none; }
 
-        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        /* Glassmorphic Header */
+        header { background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(27,67,50,0.08); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(217,119,6,0.15); }
         .navbar { max-width: 1200px; margin: auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 1.35rem; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 8px; }
-        .logo span { color: var(--saffron); }
+        .logo { font-size: 1.35rem; font-weight: 700; color: var(--emerald); display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--gold); }
         .nav-links { display: flex; gap: 16px; list-style: none; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.92rem; }
-        .nav-links a:hover { color: var(--saffron); }
-        .lang-btn { background: var(--lsaffron); color: var(--saffron); border: 1px solid var(--saffron); padding: 6px 14px; border-radius: 20px; font-weight: 600; cursor: pointer; }
-        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--green); }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.92rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+        .lang-btn { background: linear-gradient(135deg, #FEF3C7, #FDE68A); color: #92400E; border: 1px solid var(--gold); padding: 6px 14px; border-radius: 20px; font-weight: 600; cursor: pointer; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--emerald); }
 
-        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://unsplash.com') center/cover no-repeat; color: var(--white); text-align: center; padding: 100px 20px; }
-        .hero h1 { font-size: 2.4rem; margin-bottom: 14px; }
-        .hero p { font-size: 1.15rem; max-width: 700px; margin: 0 auto 28px; color: #f1f8e9; }
-        .btn-primary { background: var(--saffron); color: var(--white); padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: 700; display: inline-block; border: none; cursor: pointer; }
+        /* Royal Gradient Hero */
+        .hero { background: linear-gradient(135deg, rgba(27,67,50,0.88), rgba(146,64,14,0.78)), url('https://unsplash.com') center/cover no-repeat; color: var(--white); text-align: center; padding: 110px 20px; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 14px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.15rem; max-width: 720px; margin: 0 auto 28px; color: #FEF3C7; }
+        .btn-primary { background: linear-gradient(135deg, #F59E0B, #D97706); color: var(--white); padding: 13px 30px; border-radius: 30px; text-decoration: none; font-weight: 700; display: inline-block; border: none; cursor: pointer; box-shadow: 0 6px 18px rgba(217,119,6,0.35); transition: 0.3s; }
+        .btn-primary:hover { transform: translateY(-2px); }
 
-        section { padding: 60px 20px; max-width: 1200px; margin: auto; }
-        .section-title { text-align: center; margin-bottom: 38px; }
-        .section-title h2 { font-size: 1.95rem; color: var(--green); margin-bottom: 8px; }
+        /* Sections & Premium Backgrounds */
+        section { padding: 65px 20px; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 2rem; color: var(--emerald); margin-bottom: 8px; }
         .section-title p { color: var(--gray); max-width: 660px; margin: auto; }
-        .bg-green { background: var(--lgreen); max-width: 100%; }
-        .bg-saffron { background: var(--lsaffron); max-width: 100%; }
+        .bg-sage { background: linear-gradient(180deg, #E9F3EC 0%, #F4F9F5 100%); max-width: 100%; border-top: 1px solid #D8E8DD; border-bottom: 1px solid #D8E8DD; }
+        .bg-amber { background: linear-gradient(180deg, #FEF6E4 0%, #FAF8F2 100%); max-width: 100%; border-top: 1px solid #FDE68A; border-bottom: 1px solid #FDE68A; }
         .inner { max-width: 1200px; margin: auto; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px; }
-        .card { background: var(--white); padding: 22px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-        .stat-card { text-align: center; border-bottom: 4px solid var(--saffron); }
-        .stat-card h3 { font-size: 2.1rem; color: var(--green); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .card { background: var(--white); padding: 24px; border-radius: 16px; box-shadow: 0 8px 24px rgba(27,67,50,0.06); border: 1px solid rgba(27,67,50,0.06); transition: 0.3s; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(27,67,50,0.1); }
+        .stat-card { text-align: center; border-bottom: 4px solid var(--gold); }
+        .stat-card h3 { font-size: 2.2rem; color: var(--emerald); }
 
-        .team-card { padding: 0 0 16px; text-align: center; overflow: hidden; }
-        .team-card img { width: 100%; height: 220px; object-fit: cover; }
-        .team-card h4 { margin-top: 12px; }
-        .team-card span { color: var(--saffron); font-weight: 600; font-size: 0.9rem; }
+        .team-card { padding: 0 0 18px; text-align: center; overflow: hidden; }
+        .team-card img { width: 100%; height: 225px; object-fit: cover; }
+        .team-card h4 { margin-top: 14px; color: var(--emerald); }
+        .team-card span { color: var(--gold); font-weight: 600; font-size: 0.9rem; }
 
         .step-card { text-align: center; }
-        .step-icon { width: 58px; height: 58px; background: var(--lgreen); color: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin: 0 auto 14px; }
-        .badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-        .badge { background: var(--green); color: var(--white); padding: 8px 16px; border-radius: 20px; font-size: 0.88rem; font-weight: 600; }
+        .step-icon { width: 60px; height: 60px; background: var(--sage); color: var(--emerald); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin: 0 auto 14px; border: 1px solid #B7E4C7; }
+        .badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+        .badge { background: var(--emerald); color: #FEF3C7; padding: 8px 18px; border-radius: 20px; font-size: 0.88rem; font-weight: 600; }
 
-        .product-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #e0e0e0; }
-        .product-card img { width: 100%; height: 200px; object-fit: cover; }
-        .product-info { padding: 18px; }
-        .price-weight { display: flex; justify-content: space-between; font-weight: 700; color: var(--green); margin: 8px 0; }
+        .product-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-card img { width: 100%; height: 205px; object-fit: cover; }
+        .product-info { padding: 20px; }
+        .price-weight { display: flex; justify-content: space-between; font-weight: 700; color: var(--emerald); margin: 8px 0; font-size: 1.05rem; }
         .ingredients { font-size: 0.85rem; color: var(--gray); margin-bottom: 14px; }
-        .btn-wa { background: var(--wa); color: var(--white); text-decoration: none; padding: 10px 14px; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; }
-        .bulk-box { text-align: center; margin-top: 32px; background: var(--lsaffron); padding: 20px; border-radius: 12px; border: 1px dashed var(--saffron); }
+        .btn-wa { background: linear-gradient(135deg, #25D366, #128C7E); color: var(--white); text-decoration: none; padding: 11px 14px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; }
+        .bulk-box { text-align: center; margin-top: 34px; background: var(--white); padding: 24px; border-radius: 16px; border: 2px dashed var(--gold); }
 
-        .hamper-card { border-top: 5px solid var(--saffron); }
-        .reel-card { position: relative; border-radius: 14px; overflow: hidden; height: 320px; background: #000; }
-        .reel-card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-        .reel-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: var(--white); padding: 16px; }
-        .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2.6rem; color: var(--white); }
+        .hamper-card { border-top: 5px solid var(--gold); }
+        .reel-card { position: relative; border-radius: 16px; overflow: hidden; height: 330px; background: #000; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .reel-card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.82; }
+        .reel-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(27,67,50,0.92)); color: var(--white); padding: 18px; }
+        .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2.8rem; color: #FDE68A; }
 
-        .cert-bar { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; background: var(--white); padding: 22px; border-radius: 12px; margin-bottom: 30px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .cert-item i { font-size: 2rem; color: var(--green); margin-bottom: 6px; }
-        .event-card { border-left: 5px solid var(--green); }
-        .event-date { color: var(--saffron); font-weight: 700; margin-bottom: 5px; }
+        .cert-bar { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; background: var(--white); padding: 24px; border-radius: 16px; margin-bottom: 30px; text-align: center; box-shadow: 0 6px 20px rgba(27,67,50,0.06); border: 1px solid #E5E7EB; }
+        .cert-item i { font-size: 2rem; color: var(--gold); margin-bottom: 6px; }
+        .event-card { border-left: 5px solid var(--emerald); }
+        .event-date { color: var(--gold); font-weight: 700; margin-bottom: 5px; }
         .form-group { margin-bottom: 12px; }
-        .form-group input { width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; }
+        .form-group input { width: 100%; padding: 11px 14px; border: 1px solid #D1D5DB; border-radius: 8px; background: var(--cream); }
 
-        .faq-item { background: var(--white); border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
-        .faq-question { padding: 15px 20px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #fafafa; }
+        .faq-item { background: var(--white); border: 1px solid #E5E7EB; border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
+        .faq-question { padding: 16px 20px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--emerald); }
         .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s ease; color: var(--gray); }
         .faq-item.active .faq-answer { padding: 14px 20px; max-height: 180px; }
 
-        footer { background: #1B5E20; color: var(--white); padding: 50px 20px 20px; }
-        .footer-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 28px; margin-bottom: 22px; }
-        .footer-grid h3 { color: #FFCC80; margin-bottom: 10px; }
-        .footer-grid p, .footer-grid a { color: #E8F5E9; text-decoration: none; font-size: 0.95rem; }
+        footer { background: linear-gradient(135deg, #1B4332, #081C15); color: var(--white); padding: 55px 20px 20px; }
+        .footer-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 28px; margin-bottom: 24px; }
+        .footer-grid h3 { color: #FDE68A; margin-bottom: 10px; }
+        .footer-grid p, .footer-grid a { color: #D8F3DC; text-decoration: none; font-size: 0.95rem; }
         .social-icons { display: flex; gap: 15px; margin-top: 12px; font-size: 1.4rem; }
-        .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 16px; font-size: 0.85rem; }
-        .sticky-wa { position: fixed; bottom: 20px; right: 20px; background: var(--wa); color: var(--white); padding: 13px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 8px; z-index: 9999; }
+        .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 18px; font-size: 0.85rem; color: #B7E4C7; }
+        .sticky-wa { position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #25D366, #128C7E); color: var(--white); padding: 13px 22px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.28); display: flex; align-items: center; gap: 8px; z-index: 9999; }
 
         @media (max-width: 850px) {
             .menu-toggle { display: block; }
@@ -116,26 +123,6 @@
             </div>
             <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home"><span class="hi">होम</span><span class="en">Home</span></a></li>
-                <li><a href="#story"><span class="hi">हमारी कहानी</span><span class="en">Our Story</span></a></li>
-                <li><a href="#products"><span class="hi">प्रोडक्ट्स</span><span class="en">Products</span></a></li>
-                <li><a href="#hampers"><span class="hi">गिफ्ट हैंपर्स</span><span class="en">Gift Hampers</span></a></li>
-                <li><a href="#events"><span class="hi">मेला अपडेट्स</span><span class="en">Events</span></a></li>
-                <li><a href="#join"><span class="hi">जुड़ें</span><span class="en">Join Us</span></a></li>
-                <li><a href="#contact"><span class="hi">संपर्क</span><span class="en">Contact</span></a></li>
-                <li>
-                    <button class="lang-btn" onclick="toggleLanguage()">
-                        <span class="hi">English</span>
-                        <span class="en">हिंदी / मराठी</span>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </header>
-
-    <!-- 2. Hero Banner -->
-    <div class="hero" id="home">
-        <h1>
     <!-- 3. Quick Introduction & Impact Stats -->
     <section>
         <div class="section-title">
@@ -151,7 +138,7 @@
     </section>
 
     <!-- 4. Hamari Kahani (About Us & Team) -->
-    <div class="bg-green" id="story">
+    <div class="bg-sage" id="story">
         <section class="inner">
             <div class="section-title">
                 <h2><span class="hi">हमारी कहानी और नेतृत्व</span><span class="en">Our Story & Meet Our Members</span></h2>
@@ -191,7 +178,7 @@
     </section>
 
     <!-- 6. Product Catalog -->
-    <div class="bg-green" id="products">
+    <div class="bg-sage" id="products">
         <section class="inner">
             <div class="section-title">
                 <h2><span class="hi">हमारे शुद्ध उत्पाद</span><span class="en">Our Handmade Products</span></h2>
@@ -265,7 +252,7 @@
         </div>
     </section>
     <!-- 8. Video Gallery (Reels & Stories) -->
-    <div class="bg-saffron">
+    <div class="bg-amber">
         <section class="inner">
             <div class="section-title">
                 <h2><span class="hi">वीडियो गैलरी (रील्स और कहानियां)</span><span class="en">Behind The Scenes & Women Stories</span></h2>
@@ -306,7 +293,7 @@
     </section>
 
     <!-- 10. Upcoming Events & Mela Updates -->
-    <div class="bg-green" id="events">
+    <div class="bg-sage" id="events">
         <section class="inner">
             <div class="section-title"><h2><span class="hi">आगामी प्रदर्शनी और मेला अपडेट्स</span><span class="en">Upcoming Exhibitions & Mela</span></h2></div>
             <div class="grid">
@@ -345,14 +332,14 @@
                     <div class="form-group"><input type="text" id="r_name" placeholder="दुकान का नाम / Shop Name" required></div>
                     <div class="form-group"><input type="tel" id="r_phone" placeholder="मोबाइल नंबर / Mobile Number" required></div>
                     <div class="form-group"><input type="text" id="r_city" placeholder="शहर / City" required></div>
-                    <button type="submit" class="btn-primary" style="width:100%; background:var(--green);">Send Retailer Inquiry</button>
+                    <button type="submit" class="btn-primary" style="width:100%; background:var(--emerald);">Send Retailer Inquiry</button>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- 12. Blog & Tips -->
-    <div class="bg-saffron">
+    <div class="bg-amber">
         <section class="inner">
             <div class="section-title"><h2><span class="hi">पारंपरिक रेसिपी और टिप्स</span><span class="en">Traditional Recipes & Tips</span></h2></div>
             <div class="grid">
