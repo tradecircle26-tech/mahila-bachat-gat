@@ -3,458 +3,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annapurna Mahila Bachat Gat | Shuddhata aur Vishwas</title>
+    <title>Annapurna Mahila Bachat Gat | शुद्धता और विश्वास</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for clean Hindi & English typography -->
     <link href="https://googleapis.com" rel="stylesheet">
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        :root {
-            --forest: #1B4332;
-            --green: #2D6A4F;
-            --sage-bg: #EEF5F0;
-            --sand-bg: #F8F6F0;
-            --saffron: #E85D04;
-            --gold: #F48C06;
-            --white: #FFFFFF;
-            --ink: #1E293B;
-            --muted: #475569;
-            --border: #E2E8F0;
-            --wa: #16A34A;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--white); color: var(--ink); line-height: 1.65; }
-        body.lang-en .hi { display: none; }
-        body.lang-hi .en { display: none; }
+</head>
+<body>
 
-        /* Top Announcement Strip */
-        .top-bar { background: var(--forest); color: #FEF3C7; text-align: center; padding: 7px 15px; font-size: 0.85rem; font-weight: 500; }
+    <!-- Sticky Floating WhatsApp Button -->
+    <a href="https://wa.me." class="floating-whatsapp" target="_blank" aria-label="Order on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="lang-hi">WhatsApp ऑर्डर</span>
+        <span class="lang-en hidden">WhatsApp Order</span>
+    </a>
 
-        /* Header */
-        header { background: var(--white); box-shadow: 0 2px 15px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
-        .navbar { max-width: 1200px; margin: auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 1.35rem; font-weight: 700; color: var(--forest); display: flex; align-items: center; gap: 8px; }
-        .logo span { color: var(--saffron); }
-        .nav-links { display: flex; gap: 18px; list-style: none; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--ink); font-weight: 600; font-size: 0.92rem; transition: 0.2s; }
-        .nav-links a:hover { color: var(--saffron); }
-        .lang-btn { background: var(--sand-bg); color: var(--forest); border: 1.5px solid var(--forest); padding: 6px 14px; border-radius: 20px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
-        .lang-btn:hover { background: var(--forest); color: var(--white); }
-        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--forest); }
+    <!-- 1. Header & Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-seedling"></i>
+                <div>
+                    <span class="logo-title">अन्नपूर्णा बचत गट</span>
+                    <span class="logo-sub">Mahila Self-Help Group</span>
+                </div>
+            </a>
 
-        /* Professional Hero Section */
-        .hero { background: linear-gradient(90deg, rgba(27, 67, 50, 0.92) 0%, rgba(27, 67, 50, 0.72) 100%), url('https://unsplash.com') center/cover no-repeat; color: var(--white); text-align: center; padding: 110px 20px; }
-        .hero-tag { display: inline-block; background: rgba(244, 140, 6, 0.25); border: 1px solid #F48C06; color: #FDE68A; padding: 5px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 14px; color: var(--white); line-height: 1.25; }
-        .hero p { font-size: 1.15rem; max-width: 700px; margin: 0 auto 30px; color: #E2E8F0; }
-        .btn-primary { background: var(--saffron); color: var(--white); padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; display: inline-block; border: none; cursor: pointer; transition: 0.25s; box-shadow: 0 4px 12px rgba(232, 93, 4, 0.3); }
-        .btn-primary:hover { background: #DC2F02; transform: translateY(-2px); }
+            <nav class="nav-links" id="navLinks">
+                <a href="#home"><span class="lang-hi">होम</span><span class="lang-en hidden">Home</span></a>
+                <a href="#story"><span class="lang-hi">हमारी कहानी</span><span class="lang-en hidden">Our Story</span></a>
+                <a href="#products"><span class="lang-hi">प्रोडक्ट्स</span><span class="lang-en hidden">Products</span></a>
+                <a href="#hampers"><span class="lang-hi">गिफ्ट हैम्पर्स</span><span class="lang-en hidden">Gift Hampers</span></a>
+                <a href="#events"><span class="lang-hi">मेला अपडेट्स</span><span class="lang-en hidden">Events</span></a>
+                <a href="#join"><span class="lang-hi">जुड़ें</span><span class="lang-en hidden">Join Us</span></a>
+                <a href="#contact"><span class="lang-hi">संपर्क</span><span class="lang-en hidden">Contact</span></a>
+            </nav>
 
-        /* Sections */
-        section { padding: 70px 20px; max-width: 1200px; margin: auto; }
-        .section-title { text-align: center; margin-bottom: 42px; }
-        .section-title h2 { font-size: 2rem; color: var(--forest); margin-bottom: 10px; font-weight: 700; }
-        .section-title p { color: var(--muted); max-width: 660px; margin: auto; font-size: 1rem; }
-        .bg-sage { background-color: var(--sage-bg); max-width: 100%; border-top: 1px solid #D8E8DD; border-bottom: 1px solid #D8E8DD; }
-        .bg-sand { background-color: var(--sand-bg); max-width: 100%; border-top: 1px solid #EAE5D9; border-bottom: 1px solid #EAE5D9; }
-        .inner { max-width: 1200px; margin: auto; }
+            <div class="nav-actions">
+                <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">English / हिंदी</button>
+                <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 24px; }
-        .card { background: var(--white); padding: 26px; border-radius: 12px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05); border: 1px solid var(--border); transition: 0.25s; }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(15, 23, 42, 0.09); }
-        .card h3, .card h4 { color: var(--forest); margin-bottom: 8px; }
-        .card p { color: var(--muted); font-size: 0.95rem; }
+    <!-- 2. Hero Banner -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-badge">
+                <i class="fas fa-check-circle"></i> 
+                <span class="lang-hi">100% घर का बना और केमिकल-मुक्त</span>
+                <span class="lang-en hidden">100% Homemade & Chemical-Free</span>
+            </span>
+            <h1>
+                <span class="lang-hi">शुद्धता और विश्वास, महिलाओं के हाथों का स्वाद</span>
+                <span class="lang-en hidden">Purity and Trust, Handmade by Women</span>
+            </h1>
+            <p>
+                <span class="lang-hi">हर खरीदारी से एक परिवार को सशक्त बनाएं। हमारे गांव की मेहनती महिलाओं द्वारा प्यार और स्वच्छता से तैयार किए गए शुद्ध उत्पाद।</span>
+                <span class="lang-en hidden">Empower a Family with Every Purchase. Pure products crafted with love and hygiene by hardworking rural women.</span>
+            </p>
+            <div class="hero-btns">
+                <a href="#products" class="btn btn-primary">
+                    <span class="lang-hi">प्रोडक्ट्स देखें</span>
+                    <span class="lang-en hidden">Shop Products</span>
+                </a>
+                <a href="#story" class="btn btn-outline">
+                    <span class="lang-hi">हमारी कहानी जानें</span>
+                    <span class="lang-en hidden">Read Our Story</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        .stat-card { text-align: center; border-top: 4px solid var(--saffron); }
-        .stat-card h3 { font-size: 2.2rem; color: var(--forest); }
-        .stat-card p { font-weight: 600; color: var(--ink); }
-
-        .team-card { padding: 0 0 20px; text-align: center; overflow: hidden; }
-        .team-card img { width: 100%; height: 230px; object-fit: cover; }
-        .team-card h4 { margin-top: 14px; font-size: 1.1rem; }
-        .team-card span { color: var(--saffron); font-weight: 600; font-size: 0.88rem; }
-
-        .step-card { text-align: center; }
-        .step-icon { width: 58px; height: 58px; background: var(--sage-bg); color: var(--forest); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin: 0 auto 15px; border: 1px solid #B7E4C7; }
-        .badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
-        .badge { background: var(--white); color: var(--forest); border: 1.5px solid var(--forest); padding: 8px 18px; border-radius: 30px; font-size: 0.88rem; font-weight: 600; }
-
-        .product-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-card img { width: 100%; height: 210px; object-fit: cover; }
-        .product-info { padding: 20px; }
-        .price-weight { display: flex; justify-content: space-between; font-weight: 700; color: var(--saffron); margin: 8px 0; font-size: 1.1rem; }
-        .ingredients { font-size: 0.85rem; color: var(--muted); margin-bottom: 15px; }
-        .btn-wa { background: var(--wa); color: var(--white); text-decoration: none; padding: 11px 14px; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; font-size: 0.95rem; }
-        .btn-wa:hover { background: #15803D; }
-        .bulk-box { text-align: center; margin-top: 36px; background: var(--white); padding: 26px; border-radius: 12px; border: 1.5px dashed var(--saffron); }
-
-        .hamper-card { border-left: 5px solid var(--saffron); }
-        .reel-card { position: relative; border-radius: 12px; overflow: hidden; height: 330px; background: #0F172A; }
-        .reel-card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-        .reel-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.92)); color: var(--white); padding: 18px; }
-        .reel-overlay h4 { color: var(--white); }
-        .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2.8rem; color: #FDE68A; }
-
-        .cert-bar { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; background: var(--sand-bg); padding: 26px; border-radius: 12px; margin-bottom: 32px; text-align: center; border: 1px solid #EAE5D9; }
-        .cert-item i { font-size: 2rem; color: var(--forest); margin-bottom: 6px; }
-        .event-card { border-top: 4px solid var(--forest); }
-        .event-date { color: var(--saffron); font-weight: 700; margin-bottom: 6px; font-size: 0.9rem; }
-        .form-group { margin-bottom: 12px; }
-        .form-group input { width: 100%; padding: 11px 14px; border: 1px solid #CBD5E1; border-radius: 8px; color: var(--ink); background: var(--sand-bg); font-size: 0.95rem; }
-
-        .faq-item { background: var(--white); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
-        .faq-question { padding: 16px 20px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--forest); }
-        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s ease; color: var(--muted); }
-        .faq-item.active .faq-answer { padding: 14px 20px; max-height: 180px; border-top: 1px solid var(--border); }
-
-        footer { background: var(--forest); color: var(--white); padding: 60px 20px 20px; }
-        .footer-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 24px; }
-        .footer-grid h3 { color: #FDE68A; margin-bottom: 12px; font-size: 1.15rem; }
-        .footer-grid p, .footer-grid a { color: #E2E8F0; text-decoration: none; font-size: 0.94rem; }
-        .social-icons { display: flex; gap: 15px; margin-top: 14px; font-size: 1.4rem; }
-        .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 18px; font-size: 0.85rem; color: #CBD5E1; }
-        .sticky-wa { position: fixed; bottom: 20px; right: 20px; background: var(--wa); color: var(--white); padding: 13px 22px; border-radius: 50px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); display: flex; align-items: center; gap: 8px; z-index: 9999; }
-
-        @media (max-width: 850px) {
-            .menu-toggle { display: block; }
-            .nav-links { display: none; width: 100%; flex-direction: column; padding-top: 15px; }
-            .nav-links.active { display: flex; }
     <!-- 3. Quick Introduction & Impact Stats -->
-    <section>
-        <div class="section-title">
-            <h2><span class="hi">हमारा परिचय और प्रभाव</span><span class="en">Who We Are & Our Impact</span></h2>
-            <p><span class="hi">साल 2019 में 10 महिलाओं से शुरू हुआ यह समूह आज 65+ परिवारों को आत्मनिर्भर बना रहा है। हम बिना किसी केमिकल या प्रिजर्वेटिव के शुद्ध उत्पाद बनाते हैं।</span><span class="en">Started in 2019 by 10 local women, our group now empowers 65+ families with 100% chemical-free homemade goods.</span></p>
-        </div>
-        <div class="grid">
-            <div class="card stat-card"><h3>65+</h3><p><span class="hi">सशक्त महिलाएं</span><span class="en">Women Empowered</span></p></div>
-            <div class="card stat-card"><h3>100%</h3><p><span class="hi">हाथों से निर्मित</span><span class="en">100% Handmade</span></p></div>
-            <div class="card stat-card"><h3>0%</h3><p><span class="hi">केमिकल मुक्त</span><span class="en">Chemical-Free</span></p></div>
-            <div class="card stat-card"><h3>5000+</h3><p><span class="hi">संतुष्ट ग्राहक</span><span class="en">Happy Customers</span></p></div>
+    <section class="stats-section">
+        <div class="container">
+            <div class="intro-box">
+                <h2>
+                    <span class="lang-hi">महिला सशक्तिकरण की एक छोटी सी पहल</span>
+                    <span class="lang-en hidden">A Small Step Towards Women Empowerment</span>
+                </h2>
+                <p>
+                    <span class="lang-hi">2019 में 10 महिलाओं के साथ शुरू हुआ हमारा बचत गट आज 45+ परिवारों की आजीविका का मुख्य आधार है। हम बिना किसी मिलावट के पारंपरिक तरीके से मसाले, पापड़, अचार और हस्तशिल्प तैयार करते हैं।</span>
+                    <span class="lang-en hidden">Started in 2019 with 10 women, our Self-Help Group now supports 45+ families. We craft traditional spices, papads, pickles, and handicrafts without any artificial preservatives.</span>
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>45+</h3>
+                    <p><span class="lang-hi">सशक्त महिलाएं</span><span class="lang-en hidden">Women Empowered</span></p>
+                </div>
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p><span class="lang-hi">हाथ से बने उत्पाद</span><span class="lang-en hidden">Handmade Products</span></p>
+                </div>
+                <div class="stat-card">
+                    <h3>0%</h3>
+                    <p><span class="lang-hi">केमिकल और प्रिजर्वेटिव्स</span><span class="lang-en hidden">Chemicals & Preservatives</span></p>
+                </div>
+                <div class="stat-card">
+                    <h3>5000+</h3>
+                    <p><span class="lang-hi">संतुष्ट ग्राहक</span><span class="lang-en hidden">Happy Customers</span></p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 4. Hamari Kahani (About Us & Team) -->
-    <div class="bg-sage" id="story">
-        <section class="inner">
-            <div class="section-title">
-                <h2><span class="hi">हमारी कहानी और नेतृत्व</span><span class="en">Our Story & Meet Our Members</span></h2>
-                <p><span class="hi">घर की चारदीवारी से निकलकर आर्थिक रूप से आत्मनिर्भर बनने वाली हमारी मेहनती बहनों से मिलें।</span><span class="en">Meet the inspiring women leaders who turned traditional skills into a thriving community enterprise.</span></p>
+    <!-- 4. Hamari Kahani (About Us & Our Team) -->
+    <section id="story" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="lang-hi">हमारी कहानी और टीम</span><span class="lang-en hidden">Our Story & Leadership</span></h2>
+                <p><span class="lang-hi">मिलिए उन महिलाओं से जो इस गट को आगे बढ़ा रही हैं</span><span class="lang-en hidden">Meet the inspiring women leading this initiative</span></p>
             </div>
-            <div class="grid">
-                <div class="card team-card">
+
+            <div class="team-grid">
+                <div class="team-card">
                     <img src="https://unsplash.com" alt="Sunita Patil">
-                    <h4>सुनीता ताई पाटिल</h4><span>President (अध्यक्ष)</span>
+                    <div class="team-info">
+                        <h3>सुनीता पाटिल (Sunita Patil)</h3>
+                        <span class="role">अध्यक्ष (President)</span>
+                        <p><span class="lang-hi">गुणवत्ता नियंत्रण और कच्चे माल की खरीद की जिम्मेदारी संभालती हैं।</span><span class="lang-en hidden">Leads quality control and raw material sourcing.</span></p>
+                    </div>
                 </div>
-                <div class="card team-card">
+                <div class="team-card">
                     <img src="https://unsplash.com" alt="Meena Deshmukh">
-                    <h4>मीना देशमुख</h4><span>Secretary & Quality Head</span>
+                    <div class="team-info">
+                        <h3>मीना देशमुख (Meena Deshmukh)</h3>
+                        <span class="role">सचिव (Secretary)</span>
+                        <p><span class="lang-hi">पैकेजिंग, हिसाब-किताब और ऑनलाइन ऑर्डर्स का प्रबंधन करती हैं।</span><span class="lang-en hidden">Manages packaging, accounts, and customer orders.</span></p>
+                    </div>
                 </div>
-                <div class="card team-card">
+                <div class="team-card">
                     <img src="https://unsplash.com" alt="Kavita Jadhav">
-                    <h4>कविता जाधव</h4><span>Treasurer & Packaging</span>
+                    <div class="team-info">
+                        <h3>कविता जाधव (Kavita Jadhav)</h3>
+                        <span class="role">उत्पादन प्रमुख (Production Head)</span>
+                        <p><span class="lang-hi">पारंपरिक रेसिपी और स्वच्छता मानकों की देखरेख करती हैं।</span><span class="lang-en hidden">Oversees traditional recipes and hygiene standards.</span></p>
+                    </div>
                 </div>
             </div>
-        </section>
-    </div>
-
-    <!-- 5. Hygiene & Quality Promise -->
-    <section>
-        <div class="section-title"><h2><span class="hi">साफ-सफाई और शुद्धता की गारंटी</span><span class="en">Hygiene & Quality Promise</span></h2></div>
-        <div class="grid">
-            <div class="card step-card"><div class="step-icon"><i class="fas fa-tractor"></i></div><h4>1. Farm-Fresh Sourcing</h4><p>सीधे किसानों से बिना पॉलिश किए शुद्ध अनाज और मसाले।</p></div>
-            <div class="card step-card"><div class="step-icon"><i class="fas fa-hands-wash"></i></div><h4>2. Hygienic Preparation</h4><p>पूरी स्वच्छता और पारंपरिक तरीके से घर जैसा निर्माण।</p></div>
-            <div class="card step-card"><div class="step-icon"><i class="fas fa-box-open"></i></div><h4>3. Eco-Friendly Packaging</h4><p>ताजगी बनाए रखने के लिए सुरक्षित फूड-ग्रेड पैकिंग।</p></div>
-        </div>
-        <div class="badges">
-            <span class="badge">100% Chemical-Free</span>
-            <span class="badge">No Preservatives</span>
-            <span class="badge">Homemade Quality</span>
-            <span class="badge">FSSAI Certified</span>
         </div>
     </section>
 
-    <!-- 6. Product Catalog -->
-    <div class="bg-sage" id="products">
-        <section class="inner">
-            <div class="section-title">
-                <h2><span class="hi">हमारे शुद्ध उत्पाद</span><span class="en">Our Handmade Products</span></h2>
-                <p><span class="hi">बिना किसी लंबे फॉर्म के सीधे WhatsApp पर अपना ऑर्डर बुक करें।</span><span class="en">Order directly on WhatsApp in one click—no lengthy forms required.</span></p>
+    <!-- 5. Saaf-Safai Aur Quality Process -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="lang-hi">साफ-सफाई और गुणवत्ता का वादा</span><span class="lang-en hidden">Hygiene & Quality Promise</span></h2>
             </div>
-            <div class="grid">
-                <div class="card product-card">
-                    <img src="https://unsplash.com" alt="Masala">
-                    <div class="product-info">
-                        <h3>कांदा लहसुन मसाला</h3>
-                        <div class="price-weight"><span>₹180</span><span>250g</span></div>
-                        <p class="ingredients"><strong>Ingredients:</strong> Chilli, Onion, Garlic, Dry Coconut, 18 Whole Spices.</p>
-                        <a href="https://wa.me." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card product-card">
-                    <img src="https://unsplash.com" alt="Papad">
-                    <div class="product-info">
-                        <h3>हाथ से बने उड़द पापड़</h3>
-                        <div class="price-weight"><span>₹150</span><span>500g</span></div>
-                        <p class="ingredients"><strong>Ingredients:</strong> Pure Urad Dal, Black Pepper, Hing, Rock Salt.</p>
-                        <a href="https://wa.me." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card product-card">
-                    <img src="https://unsplash.com" alt="Pickle">
-                    <div class="product-info">
-                        <h3>घर का बना आम का अचार</h3>
-                        <div class="price-weight"><span>₹220</span><span>500g</span></div>
-                        <p class="ingredients"><strong>Ingredients:</strong> Raw Mango, Cold-Pressed Mustard Oil, Fenugreek, Turmeric.</p>
-                        <a href="https://wa.me." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="card product-card">
-                    <img src="https://unsplash.com" alt="Ladoo">
-                    <div class="product-info">
-                        <h3>शुद्ध घी के बेसन लड्डू</h3>
-                        <div class="price-weight"><span>₹280</span><span>500g</span></div>
-                        <p class="ingredients"><strong>Ingredients:</strong> Besan, Pure Cow Ghee, Jaggery, Cardamom.</p>
-                        <a href="https://wa.me." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-            <div class="bulk-box">
-                <h4>शादी, कार्यक्रम या दुकान के लिए थोक ऑर्डर (Bulk Orders)</h4>
-                <p>5 किलो से अधिक के ऑर्डर पर विशेष छूट उपलब्ध है।</p><br>
-                <a href="https://wa.me." target="_blank" class="btn-primary">Inquire Bulk Rates</a>
-            </div>
-        </section>
-    </div>
 
-    <!-- 7. Festive & Corporate Gift Hampers -->
-    <section id="hampers">
-        <div class="section-title">
-            <h2><span class="hi">त्योहार और कॉर्पोरेट गिफ्ट हैंपर्स</span><span class="en">Festive & Corporate Gift Hampers</span></h2>
-            <p><span class="hi">दिवाली, रक्षाबंधन, होली और शादियों के लिए कस्टम पैकेजिंग और कंपनी ब्रांडिंग के साथ विशेष गिफ्ट बॉक्स।</span><span class="en">Handmade combo boxes for festivals and corporate gifting with custom logo branding.</span></p>
-        </div>
-        <div class="grid">
-            <div class="card hamper-card">
-                <h3>दिवाली पारंपरिक फराळ बॉक्स (Diwali Faral Box)</h3>
-                <p style="margin:10px 0;">चकली, बेसन लड्डू, चिवड़ा, करंजी और मिट्टी के दीये का सुंदर कॉम्बो।</p>
-                <p><strong>Starting at ₹550 / Box</strong></p><br>
-                <a href="https://wa.me." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Customize & Order</a>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-tractor"></i></div>
+                    <h4>1. शुद्ध कच्चा माल</h4>
+                    <p>सीधे स्थानीय किसानों से ताज़ा और बिना पॉलिश किया अनाज व मसाले।</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-hands-wash"></i></div>
+                    <h4>2. पूर्ण स्वच्छता</h4>
+                    <p>हेयर-नेट, ग्लव्स और साफ़-सुथरे किचन में धूप में सुखाकर तैयारी।</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-box-open"></i></div>
+                    <h4>3. इको-फ्रेंडली पैकिंग</h4>
+                    <p>फूड-ग्रेड और एयर-टाइट पैकिंग ताकि स्वाद लंबे समय तक ताज़ा रहे।</p>
+                </div>
             </div>
-            <div class="card hamper-card">
-                <h3>कॉर्पोरेट और वेडिंग रिटर्न गिफ्ट (Corporate Hampers)</h3>
-                <p style="margin:10px 0;">प्रीमियम मसाले, सूखे मेवे और हस्तनिर्मित जूट बैग — आपके नाम/लोगो के साथ।</p>
-                <p><strong>Starting at ₹450 / Box (Min. 20 Boxes)</strong></p><br>
-                <a href="https://wa.me." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Request Catalogue</a>
+
+            <div class="trust-badges">
+                <span class="badge"><i class="fas fa-leaf"></i> 100% Chemical-Free</span>
+    <!-- 8. Video Gallery (Reels & Behind the Scenes) -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="lang-hi">हमारे काम की झलक (Reels & Stories)</span><span class="lang-en hidden">Behind The Scenes & Stories</span></h2>
+                <p>देखिए कैसे हमारी बहनें प्यार और सफाई से उत्पाद तैयार करती हैं</p>
+            </div>
+            <div class="reels-grid">
+                <div class="reel-card">
+                    <div class="reel-thumb" style="background-image: url('https://unsplash.com');">
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                        <div class="reel-caption">मसाला कूटने की पारंपरिक विधि (0:25)</div>
+                    </div>
+                </div>
+                <div class="reel-card">
+                    <div class="reel-thumb" style="background-image: url('https://unsplash.com');">
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                        <div class="reel-caption">सुनीता ताई की सफलता की कहानी (0:30)</div>
+                    </div>
+                </div>
+                <div class="reel-card">
+                    <div class="reel-thumb" style="background-image: url('https://unsplash.com');">
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                        <div class="reel-caption">सिलाई और पैकेजिंग यूनिट की झलक (0:20)</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- 8. Video Gallery (Reels & Stories) -->
-    <div class="bg-sand">
-        <section class="inner">
-            <div class="section-title">
-                <h2><span class="hi">वीडियो गैलरी (रील्स और कहानियां)</span><span class="en">Behind The Scenes & Women Stories</span></h2>
-                <p><span class="hi">देखें कैसे हमारी बहनें प्यार और स्वच्छता से आपके लिए उत्पाद तैयार करती हैं।</span><span class="en">Watch short clips of our hygienic preparation and women empowerment stories.</span></p>
-            </div>
-            <div class="grid">
-                <div class="reel-card">
-                    <img src="https://unsplash.com" alt="Spice Grinding">
-                    <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-                    <div class="reel-overlay"><h4>मसाला पिसाई की प्रक्रिया</h4><small>0:25 Sec Reel</small></div>
-                </div>
-                <div class="reel-card">
-                    <img src="https://unsplash.com" alt="Papad Making">
-                    <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-                    <div class="reel-overlay"><h4>पापड़ बेलते हुए हमारी बहनें</h4><small>0:20 Sec Reel</small></div>
-                </div>
-                <div class="reel-card">
-                    <img src="https://unsplash.com" alt="Member Story">
-                    <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-                    <div class="reel-overlay"><h4>सुनीता ताई की सफलता की कहानी</h4><small>0:30 Sec Story</small></div>
-                </div>
-            </div>
-        </section>
-    </div>
 
     <!-- 9. Trust Builders (Certificates & Reviews) -->
-    <section>
-        <div class="section-title"><h2><span class="hi">प्रमाणपत्र और ग्राहकों का विश्वास</span><span class="en">Certificates & Customer Reviews</span></h2></div>
-        <div class="cert-bar">
-            <div class="cert-item"><i class="fas fa-certificate"></i><h4>FSSAI Licensed</h4><small>Reg: 1152300XXXXXXX</small></div>
-            <div class="cert-item"><i class="fas fa-award"></i><h4>NRLM / Umed Registered</h4><small>Rural Livelihoods Mission</small></div>
-            <div class="cert-item"><i class="fas fa-trophy"></i><h4>Best SHG Award 2025</h4><small>District Collector Recognition</small></div>
-        </div>
-        <div class="grid">
-            <div class="card"><p>"इनका कांदा लहसुन मसाला बिल्कुल घर जैसा है। खुशबू और स्वाद लाजवाब है, और यह महिलाओं को आत्मनिर्भर बनाता है।"</p><br><strong>— प्रिया कुलकर्णी, पुणे</strong></div>
-            <div class="card"><p>"We ordered 50 Diwali hampers for our office staff. Neat packaging, timely delivery, and authentic homemade taste!"</p><br><strong>— राजेश शर्मा, मुंबई</strong></div>
-        </div>
-    </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>सरकारी मान्यता और ग्राहकों का विश्वास</h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-box"><i class="fas fa-award"></i><h4>NRLM / Umed Registered</h4><p>पंजीकृत महिला स्वयं सहायता समूह</p></div>
+                <div class="cert-box"><i class="fas fa-utensils"></i><h4>FSSAI Food License</h4><p>खाद्य सुरक्षा मानकों द्वारा प्रमाणित</p></div>
+                <div class="cert-box"><i class="fas fa-trophy"></i><h4>जिला स्तरीय पुरस्कार 2024</h4><p>सर्वश्रेष्ठ ग्रामीण उद्यम सम्मान</p></div>
+            </div>
 
-    <!-- 10. Upcoming Events & Mela Updates -->
-    <div class="bg-sage" id="events">
-        <section class="inner">
-            <div class="section-title"><h2><span class="hi">आगामी प्रदर्शनी और मेला अपडेट्स</span><span class="en">Upcoming Exhibitions & Mela</span></h2></div>
-            <div class="grid">
-                <div class="card event-card">
-                    <div class="event-date"><i class="far fa-calendar-alt"></i> 12 - 16 December 2026</div>
-                    <h4>भीमथड़ी जत्रा (Bhimthadi Jatra), पुणे</h4>
-                    <p><strong>Stall No:</strong> B-42 | Agriculture College Ground, Pune</p>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"इनका कांदा लहसुन मसाला बिल्कुल घर जैसा है। कोई मिलावट नहीं और खुशबू लाजवाब है!"</p>
+                    <h4>- प्रिया कुलकर्णी, पुणे</h4>
                 </div>
-                <div class="card event-card">
-                    <div class="event-date"><i class="far fa-calendar-alt"></i> 05 - 10 January 2027</div>
-                    <h4>महालक्ष्मी सरस मेला (Saras Mela), मुंबई</h4>
-                    <p><strong>Stall No:</strong> 108 | MMRDA Ground, BKC, Mumbai</p>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"हमने ऑफिस दिवाली गिफ्टिंग के लिए 100 हैम्पर्स मंगवाए थे। पैकिंग और क्वालिटी दोनों बेहतरीन थीं।"</p>
+                    <h4>- राजेश शर्मा, मुंबई</h4>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- 11. Join Us / Collaboration -->
-    <section id="join">
-        <div class="section-title"><h2><span class="hi">हमारे साथ जुड़ें (Join Us)</span><span class="en">Join Us & Collaborate</span></h2></div>
-        <div class="grid">
-            <div class="card">
-                <h3><i class="fas fa-female"></i> बचत गट की सदस्य बनें</h3>
-                <p style="font-size:0.9rem; margin:8px 0 14px;">घर से काम करके आत्मनिर्भर बनने के लिए आवेदन करें।</p>
-                <form onsubmit="sendWA(event, 'Woman')">
-                    <div class="form-group"><input type="text" id="w_name" placeholder="आपका पूरा नाम / Full Name" required></div>
-                    <div class="form-group"><input type="tel" id="w_phone" placeholder="मोबाइल नंबर / Mobile Number" required></div>
-                    <div class="form-group"><input type="text" id="w_skill" placeholder="कौशल (मसाले, सिलाई, पैकिंग) / Skill"></div>
-                    <button type="submit" class="btn-primary" style="width:100%;">Apply on WhatsApp</button>
-                </form>
+    <!-- 10. Exhibition Aur Mela Updates -->
+    <section id="events" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>आगामी प्रदर्शनी और मेला (Upcoming Events)</h2>
+                <p>हमारे स्टॉल पर आएं और ताज़ा उत्पादों का स्वाद चखें</p>
             </div>
-            <div class="card">
-                <h3><i class="fas fa-store"></i> रिटेलर / डिस्ट्रीब्यूटर बनें</h3>
-                <p style="font-size:0.9rem; margin:8px 0 14px;">अपनी दुकान में हमारे शुद्ध उत्पाद रखने के लिए संपर्क करें।</p>
-                <form onsubmit="sendWA(event, 'Retailer')">
-                    <div class="form-group"><input type="text" id="r_name" placeholder="दुकान का नाम / Shop Name" required></div>
-                    <div class="form-group"><input type="tel" id="r_phone" placeholder="मोबाइल नंबर / Mobile Number" required></div>
-                    <div class="form-group"><input type="text" id="r_city" placeholder="शहर / City" required></div>
-                    <button type="submit" class="btn-primary" style="width:100%; background:var(--forest);">Send Retailer Inquiry</button>
-                </form>
+            <div class="event-list">
+                <div class="event-item">
+                    <div class="event-date"><span>25</span>NOV</div>
+                    <div class="event-details">
+                        <h4>भीमथड़ी जत्रा (Bhimthadi Jatra)</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> एग्रीकल्चर कॉलेज ग्राउंड, शिवाजीनगर | <strong>Stall No: B-14</strong></p>
+                    </div>
+                    <a href="#contact" class="btn btn-outline-dark">लोकेशन देखें</a>
+                </div>
+                <div class="event-item">
+                    <div class="event-date"><span>10</span>DEC</div>
+                    <div class="event-details">
+                        <h4>सरस आजीविका मेला (Saras Mela)</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> मुख्य प्रदर्शनी मैदान | <strong>Stall No: 42</strong></p>
+                    </div>
+                    <a href="#contact" class="btn btn-outline-dark">लोकेशन देखें</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 12. Blog & Tips -->
-    <div class="bg-sand">
-        <section class="inner">
-            <div class="section-title"><h2><span class="hi">पारंपरिक रेसिपी और टिप्स</span><span class="en">Traditional Recipes & Tips</span></h2></div>
-            <div class="grid">
-                <div class="card"><h4>झणझणीत मसाला वांगी रेसिपी</h4><p style="margin-top:8px; font-size:0.9rem;">हमारे कांदा लहसुन मसाला और मूंगफली कूट से 15 मिनट में स्वादिष्ट भरवा बैंगन बनाएं।</p></div>
-                <div class="card"><h4>अचार और मसालों को ताजा कैसे रखें?</h4><p style="margin-top:8px; font-size:0.9rem;">हमेशा सूखे चम्मच का उपयोग करें और मसालों को एयरटाइट कांच के जार में रखें।</p></div>
+    <!-- 11. Hamare Saath Judein (Join Us / Retailer) -->
+    <section id="join" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>हमारे साथ जुड़ें (Join Us & Collaborate)</h2>
             </div>
-        </section>
-    </div>
-
-    <!-- 13. FAQ -->
-    <section>
-        <div class="section-title"><h2><span class="hi">अक्सर पूछे जाने वाले प्रश्न (FAQ)</span><span class="en">Frequently Asked Questions</span></h2></div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)"><span>ऑर्डर कितने दिनों में डिलीवर होता है?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer"><p>महाराष्ट्र में 2-3 कार्यदिवस और भारत के अन्य शहरों में 4-6 कार्यदिवस में डिलीवरी हो जाती है।</p></div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)"><span>पेमेंट के क्या विकल्प उपलब्ध हैं?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer"><p>आप UPI (GPay, PhonePe, Paytm), बैंक ट्रांसफर या स्थानीय ऑर्डर पर Cash on Delivery (COD) कर सकते हैं।</p></div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)"><span>अपने ऑर्डर को ट्रैक कैसे करें?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer"><p>ऑर्डर डिस्पैच होते ही हम आपको WhatsApp पर कूरियर ट्रैकिंग लिंक भेज देते हैं।</p></div>
+            <div class="join-grid">
+                <div class="join-card">
+                    <h3>महिला सदस्य बनें</h3>
+                    <p>यदि आप अपने गांव/क्षेत्र की महिला हैं और आत्मनिर्भर बनना चाहती हैं, तो हमारे गट से जुड़ें।</p>
+                    <form onsubmit="submitForm(event, 'New Member Inquiry')">
+                        <input type="text" placeholder="आपका पूरा नाम" required>
+                        <input type="tel" placeholder="मोबाइल नंबर" required>
+                        <input type="text" placeholder="आपका कौशल (सिलाई, मसाले, पैकिंग आदि)">
+                        <button type="submit" class="btn btn-primary w-100">आवेदन भेजें</button>
+                    </form>
+                </div>
+                <div class="join-card">
+                    <h3>रिटेलर / डिस्ट्रीब्यूटर बनें</h3>
+                    <p>अपनी दुकान या सुपरमार्केट में हमारे शुद्ध उत्पाद रखने के लिए थोक रेट पर जुड़ें।</p>
+                    <form onsubmit="submitForm(event, 'Retailer / Distributor Inquiry')">
+                        <input type="text" placeholder="दुकान / कंपनी का नाम" required>
+                        <input type="tel" placeholder="संपर्क नंबर" required>
+                        <input type="text" placeholder="शहर / पिनकोड" required>
+                        <button type="submit" class="btn btn-saffron w-100">बिज़नेस पूछताछ करें</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 14. Footer -->
-    <footer id="contact">
-        <div class="footer-grid">
+    <!-- 12. Blog & Tips + 13. FAQ -->
+    <section class="section bg-light">
+        <div class="container two-col-grid">
+            <!-- Blog Tips -->
+            <div>
+                <h2 class="sub-heading">दादी माँ के नुस्खे और रेसिपी</h2>
+                <div class="blog-card">
+                    <h4>अचार को साल भर खराब होने से कैसे बचाएं?</h4>
+                    <p>अचार निकालने के लिए हमेशा सूखे चम्मच का उपयोग करें और बरनी को महीने में एक बार सुबह की धूप दिखाएं।</p>
+                </div>
+                <div class="blog-card">
+                    <h4>झटपट झुनका-भाकरी रेसिपी</h4>
+                    <p>हमारे कांदा लहसुन मसाले और शुद्ध बेसन से 10 मिनट में बनाएं पारंपरिक महाराष्ट्रीयन झुनका।</p>
+                </div>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div>
+                <h2 class="sub-heading">अक्सर पूछे जाने वाले प्रश्न (FAQ)</h2>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">ऑर्डर कैसे और कितने दिनों में मिलेगा? <span>+</span></button>
+                    <div class="faq-answer">WhatsApp पर ऑर्डर कन्फर्म होने के 3 से 5 कार्यदिवसों में कूरियर द्वारा डिलीवरी की जाती है।</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">पेमेंट कैसे कर सकते हैं? <span>+</span></button>
+                    <div class="faq-answer">आप UPI (Google Pay, PhonePe), बैंक ट्रांसफर या चुनिंदा शहरों में Cash on Delivery (COD) से पेमेंट कर सकते हैं।</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">उत्पादों की शेल्फ लाइफ कितनी है? <span>+</span></button>
+                    <div class="faq-answer">बिना प्रिजर्वेटिव्स के बने हमारे मसाले और पापड़ 6 से 9 महीने तक ताज़ा रहते हैं।</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. Contact & Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
             <div>
                 <h3>अन्नपूर्णा महिला बचत गट</h3>
-                <p>शुद्धता और विश्वास का प्रतीक। हर घर तक शुद्ध घरेलू स्वाद पहुंचाने और महिलाओं को आत्मनिर्भर बनाने का प्रयास।</p>
-                <div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div>
+                <p>शुद्धता, विश्वास और महिला आत्मनिर्भरता का प्रतीक।</p>
+                <p><i class="fas fa-map-marker-alt"></i> ग्राम पंचायत भवन के पास, मुख्य रोड, महाराष्ट्र - 411044</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
-            <div>
-                <h3>संपर्क पता (Address)</h3>
-                <p><i class="fas fa-map-marker-alt"></i> मुख्य बाजार रोड, निगडी, पुणे - 411044, महाराष्ट्र</p>
-                <p style="margin-top:8px;"><i class="fas fa-phone"></i> <a href="tel:+919876543210">+91 98765 43210</a></p>
-                <p style="margin-top:8px;"><i class="fab fa-whatsapp"></i> <a href="https://wa.me">WhatsApp: +91 98765 43210</a></p>
-            </div>
-            <div>
-                <h3>लोकेशन मैप</h3>
-                <iframe src="https://google.com" width="100%" height="140" style="border:0;border-radius:8px;" loading="lazy"></iframe>
+            <div class="map-box">
+                <iframe src="https://google.com" width="100%" height="180" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
-        <div class="copyright">© 2026 Annapurna Mahila Bachat Gat. All Rights Reserved.</div>
+        <div class="footer-bottom">
+            <p>© 2026 Annapurna Mahila Bachat Gat. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me?text=Namaste!%20Mujhe%20products%20order%20karne%20hain." target="_blank" class="sticky-wa">
-        <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i> WhatsApp Order
-    </a>
+    <script src="script.js"></script>
+</body>
+</html>
+// Replace with your Bachat Gat's actual WhatsApp number (with country code 91, without + sign)
+const WHATSAPP_NUMBER = "919876543210";
 
-    <script>
-        function toggleLanguage() {
-            document.body.classList.toggle('lang-hi');
-            document.body.classList.toggle('lang-en');
-        }
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-    <!-- 13. FAQ -->
-    <section>
-        <div class="section-title"><h2><span class="hi">अक्सर पूछे जाने वाले प्रश्न (FAQ)</span><span class="en">Frequently Asked Questions</span></h2></div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)"><span>ऑर्डर कितने दिनों में डिलीवर होता है?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer"><p>महाराष्ट्र में 2-3 कार्यदिवस और भारत के अन्य शहरों में 4-6 कार्यदिवस में डिलीवरी हो जाती है।</p></div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)"><span>पेमेंट के क्या विकल्प उपलब्ध हैं?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer"><p>आप UPI (GPay, PhonePe, Paytm), बैंक ट्रांसफर या स्थानीय ऑर्डर पर Cash on Delivery (COD) कर सकते हैं।</p></div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)"><span>अपने ऑर्डर को ट्रैक कैसे करें?</span><i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer"><p>ऑर्डर डिस्पैच होते ही हम आपको WhatsApp पर कूरियर ट्रैकिंग लिंक भेज देते हैं।</p></div>
-        </div>
-    </section>
+// 1. Bilingual Toggle (Hindi <-> English)
+let currentLang = 'hi';
 
-    <!-- 14. Footer -->
-    <footer id="contact">
-        <div class="footer-grid">
+function toggleLanguage() {
+    const hiElements = document.querySelectorAll('.lang-hi');
+    const enElements = document.querySelectorAll('.lang-en');
+
+    if (currentLang === 'hi') {
+        hiElements.forEach(el => el.classList.add('hidden'));
+        enElements.forEach(el => el.classList.remove('hidden'));
+        currentLang = 'en';
+    } else {
+        enElements.forEach(el => el.classList.add('hidden'));
+        hiElements.forEach(el => el.classList.remove('hidden'));
+        currentLang = 'hi';
+    }
+}
+
+// 2. Mobile Menu Toggle
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+}
+
+// Close mobile menu automatically when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+    });
+});
+
+// 3. Direct WhatsApp Product Order
+function orderOnWhatsApp(productName, price) {
+    const message = `Namaste Annapurna Mahila Bachat Gat! 🙏%0A%0AMujhe ye product order karna hai:%0A*Product:* ${productName}%0A*Price:* ${price}%0A*Quantity:* 1%0A%0AKripya delivery details aur payment link batayein.`;
+    window.open(`https://wa.me{WHATSAPP_NUMBER}?text=${message}`, '_blank');
+}
+
+// 4. Bulk / Gift Hamper Inquiry on WhatsApp
+function orderBulk(itemName) {
+    const message = `Namaste! 🙏%0A%0AMujhe *${itemName}* ke liye Bulk / Custom Gift Hamper order ki jaankari aur wholesale rate chahiye.`;
+    window.open(`https://wa.me{WHATSAPP_NUMBER}?text=${message}`, '_blank');
+}
+
+// 5. FAQ Accordion (Open/Close Answers)
+function toggleFaq(button) {
+    const answer = button.nextElementSibling;
+    const icon = button.querySelector('span');
+    
+    if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        icon.textContent = '+';
+    } else {
+        answer.style.display = 'block';
+        icon.textContent = '-';
+    }
+}
+
+// 6. Join Us / Retailer Form Submission Handler (Sends Inquiry directly to WhatsApp)
+function submitForm(event, formType) {
+    event.preventDefault();
+    const inputs = event.target.querySelectorAll('input');
+    const name = inputs[0].value;
+    const phone = inputs[1].value;
+    const extra = inputs[2].value;
+
+    const message = `Namaste! 🙏%0A%0ANaya *${formType}* aavedan:%0A*Naam/Dukaan:* ${name}%0A*Mobile:* ${phone}%0A*Details/City:* ${extra}`;
+    
+    alert(`Dhanyawad ${name}! Aapki jaankari WhatsApp par bheji ja rahi hai.`);
+    window.open(`https://wa.me{WHATSAPP_NUMBER}?text=${message}`, '_blank');
+    event.target.reset();
+}
+    <!-- 14. Contact & Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
             <div>
                 <h3>अन्नपूर्णा महिला बचत गट</h3>
-                <p>शुद्धता और विश्वास का प्रतीक। हर घर तक शुद्ध घरेलू स्वाद पहुंचाने और महिलाओं को आत्मनिर्भर बनाने का प्रयास।</p>
-                <div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div>
+                <p>शुद्धता, विश्वास और महिला आत्मनिर्भरता का प्रतीक।</p>
+                <p><i class="fas fa-map-marker-alt"></i> ग्राम पंचायत भवन के पास, मुख्य रोड, महाराष्ट्र - 411044</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
-            <div>
-                <h3>संपर्क पता (Address)</h3>
-                <p><i class="fas fa-map-marker-alt"></i> मुख्य बाजार रोड, निगडी, पुणे - 411044, महाराष्ट्र</p>
-                <p style="margin-top:8px;"><i class="fas fa-phone"></i> <a href="tel:+919876543210">+91 98765 43210</a></p>
-                <p style="margin-top:8px;"><i class="fab fa-whatsapp"></i> <a href="https://wa.me">WhatsApp: +91 98765 43210</a></p>
-            </div>
-            <div>
-                <h3>लोकेशन मैप</h3>
-                <iframe src="https://google.com" width="100%" height="140" style="border:0;border-radius:8px;" loading="lazy"></iframe>
+            <div class="map-box">
+                <iframe 
+                    src="https://google.com" 
+                    width="100%" 
+                    height="180" 
+                    style="border:0; border-radius: 8px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
-        <div class="copyright">© 2026 Annapurna Mahila Bachat Gat. All Rights Reserved.</div>
+        <div class="footer-bottom">
+            <p>© 2026 Annapurna Mahila Bachat Gat. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me?text=Namaste!%20Mujhe%20products%20order%20karne%20hain." target="_blank" class="sticky-wa">
-        <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i> WhatsApp Order
-    </a>
-
-    <script>
-        function toggleLanguage() {
-            document.body.classList.toggle('lang-hi');
-            document.body.classList.toggle('lang-en');
-        }
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-        function toggleFaq(el) {
-            el.parentElement.classList.toggle('active');
-        }
-        function sendWA(e, type) {
-            e.preventDefault();
-            let msg = type === 'Woman'
-                ? `Namaste! Join Bachat Gat.%0AName: ${document.getElementById('w_name').value}%0APhone: ${document.getElementById('w_phone').value}%0ASkill: ${document.getElementById('w_skill').value}`
-                : `Namaste! Retailer Inquiry.%0AShop: ${document.getElementById('r_name').value}%0APhone: ${document.getElementById('r_phone').value}%0ACity: ${document.getElementById('r_city').value}`;
-            window.open(`https://wa.me?text=${msg}`, '_blank');
-        }
-    </script>
+    <!-- JavaScript File Link -->
+    <script src="script.js"></script>
 </body>
 </html>
